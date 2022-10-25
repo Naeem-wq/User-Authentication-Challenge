@@ -9,16 +9,16 @@ if (isset($_SESSION['user_id']) &&
 	include "../db_conn.php";
 
 
-    /** 
+    /* 
 	  check if category 
 	  name is submitted
-	**/
+	*/
 	if (isset($_POST['category_name']) &&
         isset($_POST['category_id'])) {
-		/** 
+		/* 
 		Get data from POST request 
 		and store them in var
-		**/
+		*/
 		$name = $_POST['category_name'];
 		$id = $_POST['category_id'];
 
@@ -35,10 +35,10 @@ if (isset($_SESSION['user_id']) &&
 			$stmt = $conn->prepare($sql);
 			$res  = $stmt->execute([$name, $id]);
 
-			/**
+			/*
 		      If there is no error while 
 		      updating the data
-		    **/
+		    */
 		     if ($res) {
 		     	# success message
 		     	$sm = "Successfully updated!";

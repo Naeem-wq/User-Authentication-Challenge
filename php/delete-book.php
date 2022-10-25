@@ -9,15 +9,15 @@ if (isset($_SESSION['user_id']) &&
 	include "../db_conn.php";
 
 
-    /** 
+    /* 
 	  check if the book 
 	  id set
-	**/
+	*/
 	if (isset($_GET['id'])) {
-		/** 
+		/* 
 		Get data from GET request 
 		and store it in var
-		**/
+		*/
 		$id = $_GET['id'];
 
 		#simple form Validation
@@ -40,10 +40,10 @@ if (isset($_SESSION['user_id']) &&
 				$stmt = $conn->prepare($sql);
 				$res  = $stmt->execute([$id]);
 
-				/**
+				/*
 			      If there is no error while 
 			      Deleting the data
-			    **/
+			    */
 			     if ($res) {
 			     	# delete the current book_cover and the file
                     $cover = $the_book['cover'];
